@@ -1,0 +1,158 @@
+{
+    "colors": [
+        {
+            "id": "1",
+            "name": "白色"
+        },
+        {
+            "id": "2",
+            "name": "黑色"
+        }
+    ],
+    "sizes": [
+        {
+            "id": "1",
+            "name": "S",
+            "sort": 2
+        },
+        {
+            "id": "2",
+            "name": "M",
+            "sort": 3
+        }
+    ],
+    "navs": [
+        {
+            "id": 1,
+            "name": "MEN",
+            "type": "nav",
+            "route": "MEN",
+            "sort": 1,
+            "children": [
+                {
+                    "id": 1,
+                    "type": "category",
+                    "name": "男用上衣類",
+                    "route": "thirt",
+                    "sort": 1,
+                    "children": [
+                        {
+                            "id": 1,
+                            "type": "subCategory",
+                            "name": "聯名長T",
+                            "sort": 1,
+                            "route": "longThirt",
+                            "children": [
+                                {
+                                    "id": 1,
+                                    "name": "迪士尼",
+                                    "type": "series",
+                                    "sort": 1,
+                                    "children": [
+                                        "1",
+                                        "2"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "type": "category",
+                    "name": "男用庫子類",
+                    "route": "pants",
+                    "sort": 1,
+                    "children": []
+                },
+                {
+                    "id": 33,
+                    "type": "category",
+                    "name": "男用外套類",
+                    "sort": 1,
+                    "route": "coat",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "WOMEN",
+            "type": "nav",
+            "route": "WOMEN",
+            "sort": 1,
+            "children": [
+                {
+                    "id": 21,
+                    "type": "category",
+                    "name": "女用上衣類",
+                    "route": "shirt",
+                    "sort": 1,
+                    "children": [
+                        {
+                            "id": 2,
+                            "type": "subCategory",
+                            "sort": 1,
+                            "route": "longShirt",
+                            "name": "聯名長T",
+                            "children": [
+                                {
+                                    "id": 33,
+                                    "sort": 1,
+                                    "name": "迪士尼",
+                                    "type": "series",
+                                    "children": [
+                                        "1",
+                                        "2"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": 3,
+            "name": "粗針寬版高領毛衣",
+            "price": 199,
+            "sort": 1
+        },
+        {
+            "id": 44,
+            "name": "粗針寬版毛衣",
+            "price": 333,
+            "sort": 2
+        }
+    ],
+    "subProducts": [
+        {
+            "id": 1,
+            "color_id": 1,
+            "product_id": 1,
+            "sort": 2,
+            "sizes": [
+                {
+                    "size_id": 1,
+                    "name": "S",
+                    "isAvailable": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "color_id": 1,
+            "sort": 1,
+            "product_id": 2,
+            "sizes": [
+                {
+                    "size_id": 1,
+                    "name": "S",
+                    "isAvailable": true
+                }
+            ]
+        }
+    ]
+}
