@@ -6,7 +6,7 @@ import { INDEX_CAROUSEL_IMG } from '../style/const';
 import carouselImg0 from '/carousel/0.jpg'
 import carouselImg1 from '/carousel/1.jpg'
 import carouselImg2 from '/carousel/2.jpg'
-import carouselImg3 from '/carousel/0.jpg'
+import carouselImg3 from '/carousel/3.jpg'
 export const IndexPage = () => {
     return (
         <PageContainer>
