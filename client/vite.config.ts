@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ command, mode, ssrBuild }) => {
   if (command === 'build') {
     return {
-      base: '/nest2/docs/client/',
+      base: '/nest2/client/',
       plugins: [react()],
     }
   } else {
