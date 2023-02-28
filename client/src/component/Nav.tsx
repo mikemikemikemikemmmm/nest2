@@ -18,7 +18,7 @@ export const Nav = () => {
                         if (nav.children.length === 0) {
                             return false
                         }
-                        if (nav.children.some(category => category?.children?.length === 0)) {
+                        if (nav.children.every(category => category?.children?.length === 0)) {
                             return false
                         }
                         return true
