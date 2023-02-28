@@ -4,6 +4,10 @@ import { DBService } from "src/core/db/service";
 @Controller('getClientController')
 export class GetClientController {
   constructor(private dbService: DBService) { }
+  // @Get('test')
+  // test() {
+  //   throw Error
+  // }
   @Get('getAllNavApi')
   async getAllNavApi() {
     const str = `
