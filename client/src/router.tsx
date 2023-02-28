@@ -1,5 +1,5 @@
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import { DetailPage } from './page/detail'
 import { getProductCardDataOnNavIndexApi, getProductDetailByProductIdApi, getSeriesDataByRouteApi, SeriesData } from './api/get'
 import { ProductListPage } from './page/list'
@@ -8,8 +8,7 @@ import { ErrorComponent } from './component/errorComponent'
 import { errorHandler } from './errorHandler'
 import { IndexPage } from './page'
 import { store } from './store'
-
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         element: <ErrorComponent />,
         path: "error",

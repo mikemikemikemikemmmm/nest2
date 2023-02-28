@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, Route, RouterProvider, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import '../src/style/index.css'
@@ -10,7 +10,7 @@ import { ProductPage } from "./page/product";
 import { DetailPage } from "./page/detail";
 import { LoginPage } from "./page/login";
 import { PageContainer } from "./component/pageContainer";
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <PageContainer hasNav={false}><LoginPage /></PageContainer>,
