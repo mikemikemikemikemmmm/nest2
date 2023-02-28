@@ -33,7 +33,7 @@ export class CategoryService {
     const hasSameRoute = await this.dbService.queryByRawSql(`
       select id
       from category
-      where nav_id = ${data.nav_id} and route = '${data.route}';
+      where nav_id = ${data.nav_id} and route = '${data.route}' and id != ${id};
     `)
     if (hasSameRoute.result.length > 0) {
       return {

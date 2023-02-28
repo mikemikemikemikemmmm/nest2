@@ -32,7 +32,7 @@ export class SubCategoryService {
     const hasSameParentAndRoute = await this.dbService.queryByRawSql(`
       select id
       from sub_category
-      where category_id = ${data.category_id} and route = '${data.route}';
+      where category_id = ${data.category_id} and route = '${data.route}' and id !=${id};
     `)
     if (hasSameParentAndRoute.result.length > 0) {
       return {

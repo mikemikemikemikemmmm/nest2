@@ -26,7 +26,7 @@ export class SeriesService {
     const hasSameParentAndName = await this.dbService.queryByRawSql(`
       select id
       from series
-      where sub_category_id = ${data.sub_category_id} and name = '${data.name}';
+      where sub_category_id = ${data.sub_category_id} and name = '${data.name}' and id != ${id};
     `)
     if (hasSameParentAndName.result.length > 0) {
       return {

@@ -6,7 +6,7 @@ import { RootState, setIsLoading } from '../../src/store'
 export const LoadingContainer = () => {
     const isLoading = useSelector((state: RootState) => state.appSlice.isLoading)
     return <Backdrop
-        sx={{ bgcolor: 'transparent', color: 'black', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{ bgcolor: 'transparent', color: 'black', zIndex: 9999 }}
         open={isLoading}
     >
         <CircularProgress color="inherit" />

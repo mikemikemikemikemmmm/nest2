@@ -1,0 +1,1 @@
+{"version":3,"file":"module.js","sourceRoot":"","sources":["../../../../src/core/table/color/module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,6CAA+C;AAC/C,uCAAyC;AAMlC,IAAM,WAAW,GAAjB,MAAM,WAAW;CAAI,CAAA;AAAf,WAAW;IALvB,IAAA,eAAM,EAAC;QACN,OAAO,EAAE,EAAE;QACX,WAAW,EAAE,CAAC,4BAAe,CAAC;QAC9B,SAAS,EAAE,CAAC,sBAAY,CAAC;KAC1B,CAAC;GACW,WAAW,CAAI;AAAf,kCAAW"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"getModule.js","sourceRoot":"","sources":["../../../src/core/getApi/getModule.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,2CAA8C;AAC9C,yDAAyD;AACzD,uDAAsD;AAK/C,IAAM,YAAY,GAAlB,MAAM,YAAY;CAAI,CAAA;AAAhB,YAAY;IAJxB,IAAA,eAAM,EAAC;QACJ,OAAO,EAAE,CAAC,qBAAY,CAAC;QACvB,WAAW,EAAE,CAAC,oCAAkB,EAAE,sCAAmB,CAAC;KACzD,CAAC;GACW,YAAY,CAAI;AAAhB,oCAAY"}
