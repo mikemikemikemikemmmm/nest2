@@ -1,27 +1,12 @@
 import { Container, Grid, Button, TextField, Stack, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { getProductsForProductPageApi, getSeriesDataForCreateProductApi, ResProductCard, ResSeriesForDetailPage } from "../api/get";
-import { dispatchError, isValidInput, ValidData } from "../utils/errorHandler";
+import { dispatchError, ValidData } from "../utils/errorHandler";
 import { ProductCard } from "../component/productCard";
-import { useNavigate } from "react-router-dom";
 import { ModalContainer } from "../component/ModalContainer";
 import { createProductApi } from "../api/post";
 import { isNumInt } from "../utils/isPostiveInt";
 interface ModalData { name: string, series_id: number, sort: number }
-const validData: ValidData<ModalData> = {
-    name: {
-        errorMessenge: '名稱為必須',
-        validFn: (val) => val !== ''
-    },
-    sort: {
-        errorMessenge: '排序須為整數',
-        validFn: (val) => isNumInt(val)
-    },
-    series_id: {
-        errorMessenge: '系列須為整數',
-        validFn: (val) => isNumInt(val)
-    }
-}
 export const ProductModal = (props: { modalData: ModalData, toggle: () => void, closeModal: () => void, seriesData: ResSeriesForDetailPage[] }) => {
     const { modalData, seriesData, closeModal, toggle } = props
     const [data, setData] = useState<ModalData>(modalData)
@@ -29,8 +14,14 @@ export const ProductModal = (props: { modalData: ModalData, toggle: () => void, 
         name: false
     })
     const handleSubmit = async () => {
-        if (!isValidInput(modalData, validData)) {
-            return
+        if (modalData.name === '') {
+            return dispatchError('名稱為必須')
+        }
+        if (!isNumInt(modalData.sort)) {
+            return dispatchError('排序須為整數')
+        }
+        if (!isNumInt(modalData.series_id)) {
+            return dispatchError('系列須為整數')
         }
         const execute = await createProductApi(data)
         if (!execute.error) {

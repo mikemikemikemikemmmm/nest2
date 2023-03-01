@@ -5,7 +5,7 @@ import { subProductImgHeight, subProductImgWidth } from "../config"
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
-import { dispatchError, isNewSubproduct, isValidInput } from "../utils/errorHandler"
+import { dispatchError, isNewSubproduct } from "../utils/errorHandler"
 import { handleImgError } from "../utils/imgError";
 import { useDispatch } from "react-redux";
 import { setIsLoading } from "../store";

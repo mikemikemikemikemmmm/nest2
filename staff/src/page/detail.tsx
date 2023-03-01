@@ -1,7 +1,7 @@
 import { Card, Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Button, TextField, Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { getProductDetailDataByProductIdApi, ResProductDataForDetailPage, getProductIdBySeriesIdAndNameApi, ResColor, ResSubProduct, ResSeriesForDetailPage } from "../api/get"
+import { getProductDetailDataByProductIdApi, ResProductDataForDetailPage, ResColor, ResSubProduct, ResSeriesForDetailPage } from "../api/get"
 import { newIdStart } from "../config"
 import { dispatchError, isNewSubproduct, ValidData } from "../utils/errorHandler"
 import { useDispatch } from "react-redux";
@@ -9,35 +9,8 @@ import { deleteProductApi, deleteSubProductApi } from "../api/delete";
 import { SubProductCard } from "../component/subProductCard";
 import { isNumInt } from "../utils/isPostiveInt";
 import { PutProduct, putProductApi, PutSubproduct } from "../api/put";
-const validData: ValidData<ResProductDataForDetailPage> = {
-    name: {
-        errorMessenge: '名稱為必須',
-        validFn: (val) => val !== ''
-    },
-    series_id: {
-        errorMessenge: '系列需為整數',
-        validFn: (val) => isNumInt(val)
-    },
-    sort: {
-        errorMessenge: '系列需為整數',
-        validFn: (val) => isNumInt(val)
-    },
-    id: {
-        validFn: () => true,
-        errorMessenge: ""
-    },
-    series_name: {
-        validFn: () => true,
-        errorMessenge: ""
-    },
-    sub_products: {
-        validFn: () => true,
-        errorMessenge: ""
-    }
-}
 export const DetailPage = () => {
     const { productId } = useParams()
-    const dispatch = useDispatch()
     const navigator = useNavigate()
     const counterRef = useRef(newIdStart)
     const createIdForNew = () => {
@@ -169,7 +142,7 @@ export const DetailPage = () => {
     }
     const handleSubmit = async () => { //TODO
         if (!isVaildAllInput()) {
-            dispatchError('請確保無輸入錯誤')
+            dispatchError('名稱為必須，其餘需為正整數')
             return
         }
         if (!isAllColorIdDiff()) {
