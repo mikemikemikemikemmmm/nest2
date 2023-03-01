@@ -42,7 +42,7 @@ export const ProductDetail = (props: ProductDetailData) => {
             <div className="inline-block w-1/2 align-top">
                 <div className='my-2'>
                     <span className='inline-block'>{`${name} (${selectedSubproduct.color_name})`}</span>
-                    <span className='inline-block ml-auto'>{selectedSubproduct.price}</span>
+                    <span className='inline-block ml-4'>${selectedSubproduct.price}</span>
                 </div>
                 <div className='my-2'>
                     {subproducts.map(sub => (
