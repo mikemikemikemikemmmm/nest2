@@ -131,16 +131,18 @@ export const CategoryPageModal = (props: Props) => {
                         id,
                         name: inputData.name,
                         sort: inputData.sort,
-                        route: inputData.route, category_id: inputData.parent_id
+                        route: inputData.route,
+                        category_id: inputData.parent_id
 
                     })
                     break;
                 case 'series':
+                    console.log(inputData, 111)
                     res = await putSeriesApi({
                         id,
                         name: inputData.name,
-                        sort: inputData.sort, sub_category_id: inputData.parent_id
-
+                        sort: inputData.sort,
+                        sub_category_id: inputData.parent_id
                     })
                     break;
             }

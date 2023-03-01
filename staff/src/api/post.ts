@@ -1,5 +1,6 @@
 import { formdataKeyForData, formdataKeyForFile } from "../config";
 import { SinglePartial } from "../type";
+import { getErrorMessenge } from "../utils/errorHandler";
 import { getToken } from "../utils/token";
 import { baseApi, postApi } from "./base";
 import { ResSubProduct } from "./get";
@@ -60,5 +61,29 @@ export const createSubproductApi = (data: CreateSubProduct) => {
     return postApi('subProduct', formData)
 }
 //auth
-export const loginApi = (data: { password: string, name: string }) => baseApi.post('authController/login', data).then(data => data.data)
-export const testTokenApi = () => baseApi.post(`authController/testToken?temp=${performance.now()}`).then(data => data.data)
+export const loginApi = (data: { password: string, name: string }) => baseApi.post('authController/login', data)
+    .then(res => {
+        if (res.data.error) {
+            throw Error(res.data.error)
+        } else {
+            return {
+                result: res.data.result,
+                error: undefined
+            }
+        }
+    }).catch(error => {
+        return { result: undefined, error: getErrorMessenge(error) }
+    })
+export const testTokenApi = async () => await baseApi.post(`authController/testToken?temp=${performance.now()}`)
+    .then(res => {
+        if (res.data.error) {
+            throw Error(res.data.error)
+        } else {
+            return {
+                error: undefined,
+                result: res.data.result
+            }
+        }
+    }).catch(error => {
+        return { result: undefined, error: getErrorMessenge(error) }
+    })

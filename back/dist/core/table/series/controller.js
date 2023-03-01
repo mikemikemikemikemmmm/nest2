@@ -41,6 +41,7 @@ __decorate([
 __decorate([
     (0, decorators_1.Put)(':id'),
     __param(0, (0, decorators_1.Param)('id')),
+    __param(1, (0, decorators_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, dto_1.PutDto]),
     __metadata("design:returntype", void 0)

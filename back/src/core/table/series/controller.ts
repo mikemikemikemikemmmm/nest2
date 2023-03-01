@@ -11,7 +11,7 @@ export class SeriesController {
     return this.service.delete(id);
   }
   @Put(':id')
-  put(@Param('id') id: number, data: PutDto) {
+  put(@Param('id') id: number, @Body() data: PutDto) {
     return this.service.put(id, data);
   }
   @Post()
