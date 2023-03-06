@@ -6,7 +6,7 @@ import { ErrorComponent } from "./errorComponent"
 import { Nav } from "./Nav"
 import { RootState, setAllNavData } from '../store'
 
-export const PageContainer = (props: { children: JSX.Element }) => {
+export const PageContainerWithNav = (props: { children: JSX.Element }) => {
     return (
         <div className="App"
             style={{

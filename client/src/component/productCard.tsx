@@ -15,15 +15,15 @@ export const ProductCard = (props: ProductCardData) => {
         }
     }} />
     return (
-        <div ref={selfDom} className='inline-block relative' style={{ width: CARD_LAYOUT.WIDTH }}>
-            <Link to={`/detail/${props.id}`} style={{ display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 100 }} />
+        <div data-testid="productCard" ref={selfDom} className='inline-block relative' style={{ width: CARD_LAYOUT.WIDTH }}>
+            <Link data-testid="productCard-link" to={`/detail/${props.id}`} style={{ display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 100 }} />
             <div className="my-1 flex items-center" style={{ height: CARD_LAYOUT.HEIGHT }}>
                 {imgDom}
             </div>
             <div className="flex justify-center my-2">
                 {
                     props.subproducts.map(sp => (
-                        <Link className="w-4 h-4 mx-1 inline-block border border-gray" style={{ zIndex: 200 }} to={`/detail/${props.id}?${detailQuerySpIdString}=${sp.id}`} key={sp.id}>
+                        <Link data-testid='productCard-colorBtn' className="w-4 h-4 mx-1 inline-block border border-gray" style={{ zIndex: 200 }} to={`/detail/${props.id}?${detailQuerySpIdString}=${sp.id}`} key={sp.id}>
                             <img className="w-full h-full" src={getColorImgUrlApi(sp.color_id)} alt={sp.color_name} />
                         </Link>
                     ))

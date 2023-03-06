@@ -33,7 +33,7 @@ export const ProductDetail = (props: ProductDetailData) => {
         setSelectedSubproduct(target)
     }
     return (
-        <div style={{
+        <div data-testid='detailComponent' style={{
             width: APP_WIDTH - ASIDE_WIDTH
         }}>
             <div className="inline-block w-1/2 align-top">
@@ -47,6 +47,7 @@ export const ProductDetail = (props: ProductDetailData) => {
                 <div className='my-2'>
                     {subproducts.map(sub => (
                         <button
+                            data-testid='detailComponent-colorBtn'
                             onClick={() => handleSelectSubproduct(sub.id)}
                             className={`w-6 h-6 mr-2 p-1 border ${selectedSubproduct.id === sub.id ? 'border-black' : 'border-white'}`}
                             key={sub.id}
@@ -56,9 +57,9 @@ export const ProductDetail = (props: ProductDetailData) => {
                     ))}
                 </div>
                 <div className="my-2">
-                    <button className={`py-2  px-7 mr-3 bg-slate-200 border ${selectedSize === 'S' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('S')}>S</button>
-                    <button className={`py-2 px-7 mr-3 bg-slate-200 border ${selectedSize === 'M' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('M')} >M</button>
-                    <button className={`py-2 px-7 mr-3 bg-slate-200 border ${selectedSize === 'L' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('L')} >L</button>
+                    <button data-testid='detailComponent-sizeBtn' className={`py-2  px-7 mr-3 bg-slate-200 border ${selectedSize === 'S' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('S')}>S</button>
+                    <button data-testid='detailComponent-sizeBtn' className={`py-2 px-7 mr-3 bg-slate-200 border ${selectedSize === 'M' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('M')} >M</button>
+                    <button data-testid='detailComponent-sizeBtn' className={`py-2 px-7 mr-3 bg-slate-200 border ${selectedSize === 'L' ? 'border-black' : 'border-white'}`} onClick={() => handleSelectSize('L')} >L</button>
                 </div>
             </div>
         </div>

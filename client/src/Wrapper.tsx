@@ -20,18 +20,14 @@ function Wrapper(props: { children: JSX.Element }) {
     getAllNavData()
   }, [])
   if (hasError) {
-    return <ErrorComponent />
+    return <div data-testid="wrapper-error"></div>
   }
   if (allNavData.length === 0) {
-    return (
-      <div></div>
-    )
+    return <div data-testid="wrapper-nodata"></div>
   }
   return (
-    <div className="w-screen h-screen">
-      {hasError || allNavData.length === 0 ?
-        <ErrorComponent />
-        : props.children}
+    <div className="w-screen h-screen" data-testid="wrapper-success">
+      {props.children}
     </div>
   )
 

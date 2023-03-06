@@ -2,18 +2,18 @@ import { useEffect, useState } from "react"
 import { useLoaderData, useParams } from "react-router-dom"
 import { SeriesData } from "../api/get"
 import { Aside } from "../component/aside"
-import { PageContainer } from "../component/PageContainer"
+import { PageContainerWithNav } from "../component/PageContainerWithNav"
 import { ProductCard } from "../component/productCard"
 export const ProductListPage = () => {
     const loaderData = useLoaderData() as { data: SeriesData[] }
     const seriesDatas = loaderData.data
     return (
-        <PageContainer>
+        <PageContainerWithNav>
             <div className="flex">
                 <Aside />
                 {seriesDatas.length === 0 ?
-                    <div className=" text-center">無資料</div> :
-                    <ul>
+                    <div data-testid='productlistpage-nodata' className=" text-center">無資料</div> :
+                    <ul data-testid='productlistpage-data'>
                         {seriesDatas.map(series => <li key={series.id}>
                             <div>{series.name}</div>
                             <div className="flex">
@@ -25,6 +25,6 @@ export const ProductListPage = () => {
                     </ul>
                 }
             </div>
-        </PageContainer>
+        </PageContainerWithNav>
     )
 }
